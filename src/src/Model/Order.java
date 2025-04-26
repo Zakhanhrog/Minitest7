@@ -30,20 +30,20 @@ public abstract class Order implements Payable, Comparable<Order>, Serializable 
         return orderDate;
     }
 
-    // Phương thức trừu tượng, lớp con phải cài đặt
+
     public abstract void displayInfo();
 
-    // Phương thức từ Payable, lớp con phải cài đặt
+
     @Override
     public abstract double calculateTotalPrice();
 
-    // Cài đặt Comparable: Sắp xếp theo ngày tăng dần
+
     @Override
     public int compareTo(Order other) {
         return Integer.compare(this.orderDate, other.orderDate);
     }
 
-    // Cài đặt equals và hashCode dựa trên orderId (giả sử là duy nhất)
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,7 +57,7 @@ public abstract class Order implements Payable, Comparable<Order>, Serializable 
         return Objects.hash(orderId);
     }
 
-    // toString cơ bản cho việc debug hoặc ghi log đơn giản
+
     @Override
     public String toString() {
         return "Order [ID=" + orderId + ", Customer=" + customerName + ", Date=" + orderDate + "]";

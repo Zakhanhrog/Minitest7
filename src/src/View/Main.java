@@ -157,9 +157,6 @@ public class Main {
         orderManager.removeOrder(orderIdToRemove);
     }
 
-    // --- Helper methods for input ---
-
-    // Đọc một chuỗi không rỗng từ người dùng
     private static String readNonEmptyString(String prompt) {
         String input;
         do {
@@ -172,7 +169,7 @@ public class Main {
         return input;
     }
 
-    // Đọc một số nguyên dương cho ngày (định dạng yyyyMMdd)
+
     private static int readOrderDate(String prompt) {
         int date = 0;
         boolean valid = false;
@@ -180,9 +177,9 @@ public class Main {
             System.out.print(prompt);
             try {
                 date = scanner.nextInt();
-                // Kiểm tra định dạng cơ bản 8 chữ số và > 0
+
                 if (String.valueOf(date).length() == 8 && date > 0) {
-                    // Có thể thêm kiểm tra ngày tháng hợp lệ phức tạp hơn nếu cần
+
                     valid = true;
                 } else {
                     System.out.println("Invalid format. Please use yyyyMMdd (e.g., 20231027) and must be positive.");
@@ -190,7 +187,7 @@ public class Main {
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
             } finally {
-                scanner.nextLine(); // Tiêu thụ newline sau nextInt() hoặc lỗi
+                scanner.nextLine();
             }
         }
         return date;
@@ -218,7 +215,6 @@ public class Main {
         return value;
     }
 
-    // Đọc một số nguyên dương từ người dùng
     private static int readInt(String prompt) {
         int value = -1;
         boolean valid = false;
